@@ -17,4 +17,5 @@ const fetchPromise1 = fetch(
     .catch((error) => {
         console.error(`Failed to fetch: ${error}`);
     });
-  
+
+  // if gets an error from one promise the whole thing fails

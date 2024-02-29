@@ -1,5 +1,5 @@
 function sum2DArray(arr) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => { // the promise itself runs on the main thread
         console.log('Sum called ... ');
         if(Array.isArray(arr)) {
             setTimeout(() => {
@@ -29,7 +29,9 @@ const array2D = [
 ];
 
 const sumPromise1 = sum2DArray(array2D);
-console.log(sumPromise1);
+sumPromise1.then((res) => console.log(res))
+  .catch((err) => console.log(err));
 
 const sumPromise2 = sum2DArray('array2D');
-console.log(sumPromise2);
+sumPromise2.then((res) => console.log(res))
+  .catch((err) => console.log(err));
